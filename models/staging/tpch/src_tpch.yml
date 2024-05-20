@@ -3,13 +3,13 @@ version: 2
 sources:
   - name: tpch_sf1
     database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
+    schema: tpch_sf1
     tables:
       - name: customer
-      - name: lineitem
       - name: orders
+      - name: lineitem
+      - name: nation
       - name: part
       - name: partsupp
-      - name: nation
       - name: region
       - name: supplier
