@@ -9,5 +9,4 @@
         s_nationkey as nation_key,
         s_phone as supplier_phone,
         s_acctbal as supplier_acc_bal,
-        s_comment as supplier_comment
     from {{ source('tpch_sf1', 'supplier') }}

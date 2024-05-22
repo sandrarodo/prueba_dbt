@@ -11,7 +11,6 @@
         p_size as size,
         p_container as container,
         p_retailprice as retail_price,
-        p_comment as part_comment
     from {{ source('tpch_sf1', 'part') }}
 
 

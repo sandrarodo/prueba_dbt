@@ -12,7 +12,6 @@
         o_orderpriority as order_priority,
         o_clerk as order_clerk,
         o_shippriority as ship_priority,
-        o_comment as order_comment
     from {{ source('tpch_sf1', 'orders') }}
 
 

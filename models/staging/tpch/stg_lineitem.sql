@@ -18,6 +18,5 @@
         l_receiptdate as receipt_date,
         l_shipinstruct as ship_instruct,
         l_shipmode as item_ship_mode,
-        l_comment as item_comment
     from {{ source('tpch_sf1', 'lineitem') }}
 

@@ -1,13 +1,5 @@
-with region as (
-    select * from {{ ref('stg_region') }}
-),
-
-nation as (
-    select * from {{ ref('stg_nation') }}
-),
-
-orders as (
-    select * from {{ ref('stg_orders') }}
+with geography as (
+    select * from {{ ref("intermediate_geography")}}
 ),
 
 customer as (
@@ -16,18 +8,15 @@ customer as (
 
 final as (
     select 
-        r.region_key as region_key,
-        r.region_name as region_name,
-        n.nation_name as nation_name,
-        count(c.customer_key) as customer_count,
+        c.nation_key,
+        region_key,
+        nation_name,
+        region_name,
         c.customer_key,
         c.customer_name,
-        c.customer_address,
-       
+        c.customer_address
     from customer c
-    join nation n on c.customer_nation_key = n.nation_key
-    join region r on n.region_key = r.region_key
-    group by r.region_key, r.region_name, n.nation_key, n.nation_name
+    join geography g on g.nation_key=c.nation_key
 )
 
 select * from  final
