@@ -36,8 +36,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  prueba_tecnica:
+  mi_proyecto_dbt:
     staging:
-      +materialized: table
-    marts:
-      +materialized: table
+      +schema: staging
+      +database: dbt_project
+      stg_orders:
+        +materialized: incremental
+        +unique_key: order_key
+        +incremental_strategy: merge
+        +partition_by: {field: order_date}
+    business:
+      fact_sales:
+        +materialized: table
+    intermediate:
+      +schema: intermediate
+      +materialized: view
