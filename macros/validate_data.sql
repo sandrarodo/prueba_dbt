@@ -1,4 +1,4 @@
--- macro para validar si cada cliente tiene suficiente saldo en la cuenta para pagar los pedidos
+-- macro para validar si cada cliente tiene suficiente saldo en la cuenta para pagar los pedidos (no lo uso)
 
 {% macro validate_customer_balance(customer_key) %}
     select
