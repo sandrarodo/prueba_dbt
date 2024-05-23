@@ -1,4 +1,4 @@
--- models/business/dim_suppliers.sql
+-- dimension que muestra las piezas que vienen del mismo proveedor y el coste medio 
 
 with part_partsupp as (
     select * from {{ ref('intermediate_partsupp_supplier') }}

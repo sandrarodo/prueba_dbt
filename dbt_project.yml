@@ -46,8 +46,8 @@ models:
         +incremental_strategy: merge
         +partition_by: {field: order_date}
     business:
-      +schema: business
-      +database: dbt_project
+      fact_sales:
+        +materialized: table
     intermediate:
       +schema: intermediate
       +materialized: view

@@ -1,3 +1,5 @@
+--dimension que muestra los clientes por localizacion
+
 with geography as (
     select * from {{ ref("intermediate_geography")}}
 ),
